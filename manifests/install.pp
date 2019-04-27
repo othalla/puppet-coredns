@@ -6,7 +6,7 @@
 #   include coredns::install
 class coredns::install (
 ){
-  $download_url = "${coredns::download_url_base}v${coredns::version}/coredns_${coredns::version}_linux_${coredns::architecture}.tgz"
+  $download_url = "${coredns::download_url_base}v${coredns::version}/coredns_${coredns::version}_linux_${coredns::real_arch}.tgz"
 
   archive { "/tmp/coredns-${coredns::version}.tgz":
     ensure          => present,
@@ -14,7 +14,7 @@ class coredns::install (
     extract_path    => '/opt',
     source          => $coredns::download_url,
     checksum_verify => false,
-    creates         => "/opt/coredns-${prometheus::server::version}.${prometheus::server::os}-${prometheus::server::real_arch}/coredns",
+    creates         => "/opt/coredns-${coredns::real_arch}/coredns",
     cleanup         => true,
   }
 }
