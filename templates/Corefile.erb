@@ -1,4 +1,7 @@
 .:<%= scope.lookupvar('coredns::listen_port') %> {
   log
   errors
+  <% if scope.lookupvar('coredns::prometheus_config') %>
+  prometheus scope.lookupvar('coredns::prometheus_config')
+  <% end %>
 }

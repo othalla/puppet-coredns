@@ -3,8 +3,9 @@ class coredns(
   String $version = '1.5.0',
   Stdlib::Absolutepath $install_dir = '/opt',
   Stdlib::Absolutepath $config_dir = '/etc/coredns',
-  String $user = 'coredns'
+  String $user = 'coredns',
   Integer $listen_port = 53,
+  Optional[String] $prometheus_config = undef,
 ) {
 
   case $::architecture {
