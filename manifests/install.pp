@@ -17,4 +17,14 @@ class coredns::install (
     creates         => "/opt/coredns-${coredns::real_arch}/coredns",
     cleanup         => true,
   }
+  group { $coredns::user:
+    ensure => present,
+  }
+  -> user { $coredns::user:
+    ensure     => present,
+    groups     => $coredns::user,
+    shell      => '/usr/sbin/nologin',
+    password   => '*',
+    managehome => false,
+  }
 }
