@@ -11,6 +11,6 @@ class coredns::config {
   }
   -> file { "${coredns::config_dir}/Corefile":
     ensure => present,
-    content => template('coredns/Corefile.epp')
+    content => template('coredns/Corefile.erb')
   }
 }

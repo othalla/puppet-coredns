@@ -8,7 +8,7 @@ class coredns::service {
 
   include 'systemd'
   systemd::unit_file {'coredns.service':
-    content => template('coredns/service.epp'),
+    content => template('coredns/service.erb'),
   }
   ~> service {'coredns':
     ensure => 'running',
