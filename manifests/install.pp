@@ -26,5 +26,6 @@ class coredns::install (
     shell      => '/usr/sbin/nologin',
     password   => '*',
     managehome => false,
+    home       => '/nonexistent',
   }
 }
