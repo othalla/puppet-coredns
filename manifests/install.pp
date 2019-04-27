@@ -14,7 +14,7 @@ class coredns::install (
     extract_path    => $coredns::install_dir,
     source          => $download_url,
     checksum_verify => false,
-    creates         => "/opt/coredns-${coredns::real_arch}/coredns",
+    creates         => "/opt/coredns",
     cleanup         => true,
   }
   group { $coredns::user:
