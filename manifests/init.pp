@@ -1,6 +1,8 @@
 class coredns(
   Stdlib::HTTPUrl $download_url_base = 'https://github.com/coredns/coredns/releases/download/',
   String $version = '1.5.0',
+  Stdlib::Absolutepath $install_dir = '/opt',
+  Stdlib::Absolutepath $config_dir = '/etc/coredns',
 ) {
 
   case $::architecture {

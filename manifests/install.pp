@@ -11,7 +11,7 @@ class coredns::install (
   archive { "/tmp/coredns-${coredns::version}.tgz":
     ensure          => present,
     extract         => true,
-    extract_path    => '/opt',
+    extract_path    => $coredns::install_dir,
     source          => $download_url,
     checksum_verify => false,
     creates         => "/opt/coredns-${coredns::real_arch}/coredns",
