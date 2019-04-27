@@ -12,7 +12,7 @@ class coredns::install (
     ensure          => present,
     extract         => true,
     extract_path    => '/opt',
-    source          => $coredns::download_url,
+    source          => $download_url,
     checksum_verify => false,
     creates         => "/opt/coredns-${coredns::real_arch}/coredns",
     cleanup         => true,
