@@ -15,4 +15,5 @@ class coredns(
   }
   include coredns::install
   include coredns::config
+  include coredns::service
 }
