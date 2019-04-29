@@ -15,10 +15,17 @@ define coredns::zone(
   Boolean $forward = false,
   String $forward_from = '.',
   Optional[Array[String]] $forward_to = undef,
+  Optional[String] $auto = undef,
+  Optional[Hash] $auto_config = undef,
 ) {
   if $forward {
     if $forward_to == undef {
       fail('coredns: forward_to must be set')
+    }
+  }
+  if $auto {
+    if $auto_config == undef {
+      fail('coredns: auto_config must be set')
     }
   }
   include ::coredns

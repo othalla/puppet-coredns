@@ -18,6 +18,13 @@
  <%- end %>
 <%- end -%>
 <%- end -%>
+<% if @auto -%>
+  auto <%= @auto -%> {
+ <%- @auto_config.each do |key, value| -%>
+    <%= key %> <%= value %>
+ <%- end -%>
+  }
+<%- end -%>
 <%- if @log -%>
   log
 <%- end -%>
