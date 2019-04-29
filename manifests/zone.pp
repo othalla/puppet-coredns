@@ -16,6 +16,11 @@ define coredns::zone(
   String $forward_from = '.',
   Optional[Array[String]] $forward_to = undef,
 ) {
+  if $forward {
+    if $forward_to == undef {
+      fail('coredns: forward_to must be set')
+    }
+  }
   include ::coredns
   concat::fragment{ "Corefile-${title}":
     target  => "${coredns::config_dir}/Corefile",
