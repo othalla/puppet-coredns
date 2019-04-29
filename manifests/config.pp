@@ -12,9 +12,4 @@ class coredns::config {
   -> concat { "${coredns::config_dir}/Corefile":
     ensure  => present,
   }
-  -> concat::fragment { "Corefile":
-    target  => "${coredns::config_dir}/Corefile",
-    content => template('coredns/Corefile.erb'),
-    order   => '01'
-  }
 }
