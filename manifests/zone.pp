@@ -11,6 +11,7 @@ define coredns::zone(
   Optional[Stdlib::IP::Address] $prometheus_listen_address = undef,
   Optional[Stdlib::Port] $prometheus_listen_port = undef,
   Boolean $log = false,
+  Boolean $errors = false,
 ) {
   include ::coredns
   concat::fragment{ "Corefile-${title}":
