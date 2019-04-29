@@ -10,6 +10,14 @@
 :<%= @prometheus_listen_port -%>
 <%- end -%>
 <%- end %>
+<%- if @forward -%>
+  forward <%= @forward_from -%>
+<%- if @forward_to -%>
+ <%- @forward_to.each do |destination| -%>
+ <%= destination -%>
+ <%- end %>
+<%- end -%>
+<%- end -%>
 <%- if @log -%>
   log
 <%- end -%>
