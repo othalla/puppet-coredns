@@ -1,15 +1,13 @@
-<%= @zone %>
+<%= @zone -%>
 <% if @listen_port -%>
-:<%= @listen_port %>
-<% end %>
-{
-  <% if @prometheus %>
-  prometheus
-    <% if @prometheus_listen_address %>
-      <%= @prometheus_listen_address %>
-    <% end %>
-    <% if @prometheus_listen_port %>
-      :<%= @prometheus_listen_port %>
-    <% end %>
-  <% end %>
+:<%= @listen_port -%>
+<% end -%>
+ { <% if @prometheus %>
+  prometheus <%- if @prometheus_listen_address -%>
+<%= @prometheus_listen_address -%>
+<%- end -%>
+<%- if @prometheus_listen_port -%>
+:<%= @prometheus_listen_port -%>
+<%- end -%>
+<%- end %>
 }

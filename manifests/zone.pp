@@ -5,11 +5,11 @@
 # @example
 #   coredns::zone { 'namevar': }
 define coredns::zone(
-  Stdlib::Port $listen_port = 53,
+  Optional[Stdlib::Port] $listen_port = undef,
   String[1] $zone = $title,
   Boolean $prometheus = false,
-  Stdlib::IP::Address $prometheus_listen_address = '127.0.0.1',
-  Stdlib::Port $prometheus_listen_port = 9153,
+  Optional[Stdlib::IP::Address] $prometheus_listen_address = undef,
+  Optional[Stdlib::Port] $prometheus_listen_port = undef,
 ) {
   include ::coredns
   concat::fragment{ "Corefile-${title}":
