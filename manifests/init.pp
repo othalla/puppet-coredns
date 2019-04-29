@@ -4,7 +4,7 @@ class coredns(
   Stdlib::Absolutepath $install_dir = '/opt',
   Stdlib::Absolutepath $config_dir = '/etc/coredns',
   String $user = 'coredns',
-  Integer $listen_port = 53,
+  Stdlib::Port $listen_port = 53,
   Optional[String] $prometheus_config = undef,
 ) {
 
