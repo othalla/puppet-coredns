@@ -1,10 +1,12 @@
 {
   "name": "othalla-coredns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "othalla",
-  "summary": "",
+  "summary": "Configure CoreDNS Server",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/othalla/puppet-coredns",
+  "issues_url": "https://github.com/othalla/puppet-coredns/issues",
+  "project_page": "https://github.com/othalla/puppet-coredns",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
