@@ -11,7 +11,7 @@ class coredns(
     'aarch64':                    { $real_arch = 'arm64' }
     'armv7l', 'armv6l', 'armv7l': { $real_arch = 'arm' }
     default:           {
-      fail("Unsupported kernel architecture: ${arch}")
+      fail("Unsupported kernel architecture: ${::architecture}")
     }
   }
   include coredns::install
