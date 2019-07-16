@@ -1,6 +1,6 @@
 {
   "name": "othalla-coredns",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "othalla",
   "summary": "Configure CoreDNS Server",
   "license": "Apache-2.0",
